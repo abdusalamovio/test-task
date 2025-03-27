@@ -1,4 +1,4 @@
-const AttrList = ({ data }) => {
+const AttrList = ({ data, isAdmin, onDelete }) => {
   return (
     <table>
       <thead>
@@ -13,6 +13,7 @@ const AttrList = ({ data }) => {
           <th>Долгота</th>
           <th>Ссылка</th>
           <th>Статус</th>
+          {isAdmin && <th>Действия</th>}
         </tr>
       </thead>
       <tbody>
@@ -38,6 +39,11 @@ const AttrList = ({ data }) => {
               </a>
             </td>
             <td>{item.status}</td>
+            {isAdmin && (
+              <td>
+                <button onClick={() => onDelete(item.id)}>Удалить</button>
+              </td>
+            )}
           </tr>
         ))}
       </tbody>

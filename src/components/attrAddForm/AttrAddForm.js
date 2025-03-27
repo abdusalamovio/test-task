@@ -30,6 +30,7 @@ const AttrAddForm = ({ addItem }) => {
         newLatitude,
         newLongitude
       );
+
       setNewName("");
       setNewDescription("");
       setNewRating(1);
@@ -81,7 +82,7 @@ const AttrAddForm = ({ addItem }) => {
         <input
           onChange={(e) => setNewLatitude(e.target.value)}
           value={newLatitude}
-          placeholder="Ширина"
+          placeholder="Широта"
           type="text"
         />
         <input

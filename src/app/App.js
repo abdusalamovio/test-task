@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import AttrAddForm from "../components/AttrAddForm";
-import AttrList from "../components/AttrList";
+import AttrAddForm from "../components/attrAddForm/AttrAddForm";
+import AttrList from "../components/attrList/AttrList";
 
 const App = () => {
   const [data, setData] = useState([
@@ -12,13 +12,19 @@ const App = () => {
         "Кремль — крепость в центре Москвы, на Боровицком холме, у реки Москвы, в историческом центре города.",
       dateAdded: new Date().toLocaleString(),
       rating: 5,
-      photo: "",
+      photo:
+        "https://lh3.googleusercontent.com/p/AF1QipOoaG7wUHLL0jTAu-h0cjcooIg-F7hi6HekM6ao=s680-w680-h510",
       location: "Москва, Россия",
       latitude: 55.7558,
       longitude: 37.6176,
       status: "В планах",
     },
   ]);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  const toggleAdmin = () => {
+    setIsAdmin((prev) => !prev);
+  };
 
   const addItem = (
     name,
@@ -44,13 +50,21 @@ const App = () => {
     setData([...data, newItem]);
   };
 
+  const deleteItem = (id) => {
+    setData(data.filter((item) => item.id !== id));
+  };
+
   return (
-    <div>
+    <div className="App">
       <h1>Планировщик достопримечательностей</h1>
       <p>Количество достопримечательностей: {data.length}</p>
 
-      <AttrAddForm addItem={addItem} />
-      <AttrList data={data} />
+      <button onClick={toggleAdmin}>
+        {isAdmin ? "Выйти из админ-режима" : "Войти в админ-режим"}
+      </button>
+      {isAdmin && <AttrAddForm addItem={addItem} />}
+
+      <AttrList data={data} isAdmin={isAdmin} onDelete={deleteItem} />
     </div>
   );
 };
