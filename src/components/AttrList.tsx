@@ -1,4 +1,26 @@
-const AttrList = ({ data, isAdmin, onDelete }) => {
+// AttrList.tsx
+import { FC } from "react";
+
+type Attraction = {
+  id: number;
+  name: string;
+  description: string;
+  dateAdded: string;
+  rating: number;
+  photo: string;
+  location: string;
+  latitude: number;
+  longitude: number;
+  status: string;
+};
+
+type AttrListProps = {
+  data: Attraction[];
+  isAdmin: boolean;
+  onDelete: (id: number) => void;
+};
+
+const AttrList: FC<AttrListProps> = ({ data, isAdmin, onDelete }) => {
   return (
     <table>
       <thead>

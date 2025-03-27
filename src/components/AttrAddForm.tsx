@@ -1,15 +1,28 @@
+// AttrAddForm.tsx
 import { useState } from "react";
 
-const AttrAddForm = ({ addItem }) => {
-  const [newName, setNewName] = useState("");
-  const [newDescription, setNewDescription] = useState("");
-  const [newRating, setNewRating] = useState(1);
-  const [newPhoto, setNewPhoto] = useState("");
-  const [newLocation, setNewLocation] = useState("");
-  const [newLatitude, setNewLatitude] = useState("");
-  const [newLongitude, setNewLongitude] = useState("");
+type AttrAddFormProps = {
+  addItem: (
+    name: string,
+    description: string,
+    rating: number,
+    photo: string,
+    location: string,
+    latitude: number,
+    longitude: number
+  ) => void;
+};
 
-  const onSubmit = (e) => {
+const AttrAddForm = ({ addItem }: AttrAddFormProps) => {
+  const [newName, setNewName] = useState<string>("");
+  const [newDescription, setNewDescription] = useState<string>("");
+  const [newRating, setNewRating] = useState<number>(1);
+  const [newPhoto, setNewPhoto] = useState<string>("");
+  const [newLocation, setNewLocation] = useState<string>("");
+  const [newLatitude, setNewLatitude] = useState<string>("");
+  const [newLongitude, setNewLongitude] = useState<string>("");
+
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (
@@ -27,8 +40,8 @@ const AttrAddForm = ({ addItem }) => {
         newRating,
         newPhoto,
         newLocation,
-        newLatitude,
-        newLongitude
+        parseFloat(newLatitude),
+        parseFloat(newLongitude)
       );
 
       setNewName("");
@@ -60,7 +73,7 @@ const AttrAddForm = ({ addItem }) => {
           type="text"
         />
         <input
-          onChange={(e) => setNewRating(e.target.value)}
+          onChange={(e) => setNewRating(Number(e.target.value))}
           value={newRating}
           placeholder="Рейтинг (1-5)"
           type="number"

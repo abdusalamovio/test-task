@@ -1,10 +1,23 @@
+// App.tsx
 import { useState } from "react";
+import AttrAddForm from "../components/AttrAddForm";
+import AttrList from "../components/AttrList";
 
-import AttrAddForm from "../components/attrAddForm/AttrAddForm";
-import AttrList from "../components/attrList/AttrList";
+type Attraction = {
+  id: number;
+  name: string;
+  description: string;
+  dateAdded: string;
+  rating: number;
+  photo: string;
+  location: string;
+  latitude: number;
+  longitude: number;
+  status: string;
+};
 
 const App = () => {
-  const [data, setData] = useState([
+  const [data, setData] = useState<Attraction[]>([
     {
       id: 0,
       name: "Кремль",
@@ -12,30 +25,29 @@ const App = () => {
         "Кремль — крепость в центре Москвы, на Боровицком холме, у реки Москвы, в историческом центре города.",
       dateAdded: new Date().toLocaleString(),
       rating: 5,
-      photo:
-        "https://lh3.googleusercontent.com/p/AF1QipOoaG7wUHLL0jTAu-h0cjcooIg-F7hi6HekM6ao=s680-w680-h510",
+      photo: "",
       location: "Москва, Россия",
       latitude: 55.7558,
       longitude: 37.6176,
       status: "В планах",
     },
   ]);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
   const toggleAdmin = () => {
     setIsAdmin((prev) => !prev);
   };
 
   const addItem = (
-    name,
-    description,
-    rating,
-    photo,
-    location,
-    latitude,
-    longitude
+    name: string,
+    description: string,
+    rating: number,
+    photo: string,
+    location: string,
+    latitude: number,
+    longitude: number
   ) => {
-    const newItem = {
+    const newItem: Attraction = {
       id: data.length + 1,
       name,
       description,
@@ -50,7 +62,7 @@ const App = () => {
     setData([...data, newItem]);
   };
 
-  const deleteItem = (id) => {
+  const deleteItem = (id: number) => {
     setData(data.filter((item) => item.id !== id));
   };
 
