@@ -1,0 +1,120 @@
+.backLink {
+  font-size: 19px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+/*  */
+
+.imageSection {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.thumbnailsList {
+  list-style: none;
+}
+
+.thumbnailImage {
+  height: 100px;
+  width: 75px;
+  cursor: pointer;
+}
+
+.selectedThumbnail {
+  border: 1.5px solid #007bff;
+}
+
+.mainImage {
+  border: 1px solid gray;
+  height: 203.5px;
+  width: 150px;
+}
+
+/*  */
+
+.name,
+.description,
+.colorsSection,
+.sizesSection,
+.price {
+  margin-top: 10px;
+}
+
+/*  */
+
+.colorsList {
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.colorButton {
+  cursor: pointer;
+  border: 1.5px solid #f2f2f2;
+  background-color: #f2f2f2;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.colorButton:hover {
+  background-color: #e6e6e6;
+}
+
+.selectedColor {
+  border: 1.5px solid #007bff;
+}
+
+/*  */
+
+.sizesList {
+  margin-top: 10px;
+  display: flex;
+  list-style: none;
+  gap: 5px;
+}
+
+.sizeButton {
+  border: none;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.selectedSize {
+  border: 1.5px solid #007bff;
+}
+
+/*  */
+
+.addToCartBtn {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addToCartBtn:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.addToCartBtn:disabled {
+  background-color: #a0c4ff;
+  cursor: default;
+  opacity: 1;
+}

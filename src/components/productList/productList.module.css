@@ -1,0 +1,26 @@
+.productList {
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.productLink {
+  text-decoration: none;
+}
+
+.productImage {
+  border: 1px solid gray;
+  height: 200px;
+  width: 150px;
+}
+
+.productName {
+  text-align: center;
+  color: black;
+}
+
+.productName:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,65 @@
+.backLink {
+  font-size: 19px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.list {
+  margin-top: 10px;
+  text-align: center;
+  list-style: none;
+  width: 700px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+}
+
+.image {
+  border: 1px solid gray;
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 8px 0 4px;
+}
+
+.color,
+.size,
+.price {
+  font-size: 16px;
+  margin: 2px 0;
+  color: #333;
+}
+
+.removeButton {
+  margin-top: 10px;
+  background-color: #e53935;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  background-color: #c62828;
+}
