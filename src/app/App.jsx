@@ -6,7 +6,7 @@ import "./app.css";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/test-task">
       <main style={{ margin: "10px" }}>
         <Header />
         <Routes>

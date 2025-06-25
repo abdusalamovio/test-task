@@ -1,7 +1,7 @@
 {
   "name": "test-task",
   "private": true,
-  "homepage": "https://abdusalamovio.github.io/test-task",
+  "homepage": "https://abdusalamovio.github.io/test-task/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
